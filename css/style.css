@@ -1,0 +1,609 @@
+/* ========================================
+MODERN THEME FOR KIKALU SCHOOLS
+========================================
+*/
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+/* --- CSS Variables for Easy Theme Management --- */
+:root {
+    --primary-color: #A0522D; /* A warm, inviting Sienna brown */
+    --primary-hover-color: #C36A3C;
+    --background-dark: #1a1a1a; /* A deep, rich off-black */
+    --background-light: #2c2c2c; /* For cards and elevated surfaces */
+    --text-light: #f4f4f4; /* Off-white for readability */
+    --text-dark: #333333;
+    --border-color: #444444;
+}
+
+/* --- General Body Styles --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    line-height: 1.7;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+h1 { font-size: 3.2rem; }
+h2 { font-size: 2.5rem; text-align: center; margin-bottom: 40px; }
+h3 { font-size: 1.5rem; color: var(--primary-color); }
+
+/* --- Header & Navigation --- */
+.navbar {
+    background: rgba(26, 26, 26, 0.85); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+/* Cool underline effect on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    height: 85vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/school-campus.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.hero-content h1 {
+    color: var(--text-light);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 30px;
+    border-radius: 50px; /* Modern pill-shaped button */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-3px); /* Lifts the button slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- Content Sections (Welcome, Features) --- */
+.welcome, .features {
+    padding: 80px 0;
+}
+
+.welcome p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #cccccc;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: var(--background-light);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.feature-card p {
+    color: #bbbbbb;
+}
+
+
+/* --- Footer --- */
+footer {
+    background: var(--background-light);
+    color: #aaaaaa;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* --- Hamburger Menu for Mobile (No changes needed here) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: var(--text-light);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+}
+
+/* ========================================
+ADDITIONAL STYLES FOR ROBUST PAGES
+======================================== */
+
+/* --- Page Header for About, Academics, etc. --- */
+.page-header {
+    background: var(--background-light);
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+.page-header p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* --- Content Section Shared Styles --- */
+.content-section {
+    padding: 40px 0;
+}
+
+/* --- Split Layout (Image & Text) --- */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.split-layout .split-text,
+.split-layout .split-image {
+    flex: 1;
+}
+
+.split-layout img {
+    width: 100%;
+    border-radius: 12px;
+    height: auto;
+}
+
+/* For reversing image/text order */
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* --- Mission & Vision Section --- */
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+/* --- Contact Page Layout & Form Styling --- */
+.contact-section {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+}
+
+.map-container {
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures the map corners are rounded */
+    border: 1px solid var(--border-color);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contact-form .cta-button {
+    border: none;
+    cursor: pointer;
+    align-self: flex-start; /* Aligns button to the left */
+}
+
+/* --- Responsive Adjustments for New Sections --- */
+@media (max-width: 768px) {
+    .split-layout, .split-layout.reverse {
+        flex-direction: column;
+    }
+
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-section {
+        flex-direction: column;
+    }
+}
+/* ========================================
+GALLERY & OUR TEAM PAGE STYLES
+======================================== */
+
+/* --- Photo Gallery Styles --- */
+.gallery-section {
+    padding: 60px 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents images from stretching */
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.grid-item img:hover {
+    transform: scale(1.1); /* Adds a nice zoom effect on hover */
+}
+
+/* --- Team Page Styles --- */
+.team-section {
+    padding: 60px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    text-align: center;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color);
+}
+
+.team-card h3 {
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.team-card .title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.team-card .bio {
+    font-size: 0.9rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+/* ========================================
+UNIQUE PAGE HEADER BACKGROUNDS
+======================================== */
+
+/* General styling for all page headers */
+.page-header {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--text-light);
+}
+
+/* Dark overlay to ensure text is readable */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Specific backgrounds for each page --- */
+.about-header {
+    background-image: url('https://images.pexels.com/photos/34290763/pexels-photo-34290763.jpeg');
+}
+
+.academics-header {
+    background-image: url('https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg');
+}
+
+.admissions-header {
+    background-image: url('https://images.pexels.com/photos/34290765/pexels-photo-34290765.jpeg');
+}
+
+.gallery-header {
+    background-image: url('https://images.pexels.com/photos/34290769/pexels-photo-34290769.jpeg');
+}
+
+.team-header {
+    background-image: url('https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg');
+}
+
+.contact-header {
+    background-image: url('https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg');
+}
+/* ========================================
+INVESTORS / SUPPORT US PAGE STYLES
+======================================== */
+
+/* --- Header Background --- */
+.investors-header {
+    background-image: url('https://images.pexels.com/photos/10264752/pexels-photo-10264752.jpeg');
+    background-position: center 30%; /* Focuses the image better */
+}
+
+/* --- Investment Opportunities Section --- */
+.investment-section {
+    padding: 60px 0;
+}
+
+.investment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.investment-card {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.investment-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.investment-card p {
+    flex-grow: 1; /* Ensures cards are equal height */
+    color: #cccccc;
+}
+
+.investment-card .cta-button {
+    margin-top: 20px;
+    align-self: center;
+}
+/* ========================================
+MODERN COOKIE CONSENT BANNER STYLES
+======================================== */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-light);
+    border-top: 1px solid var(--border-color);
+    padding: 20px 0;
+    z-index: 2000; /* Ensures it's on top of other content */
+    transform: translateY(100%); /* Initially hidden below screen */
+    transition: transform 0.5s ease-in-out;
+}
+
+.cookie-banner.active {
+    transform: translateY(0); /* Slides the banner into view */
+}
+
+.cookie-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-content p {
+    margin: 0;
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.cookie-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 15px;
+    flex-shrink: 0; /* Prevents buttons from shrinking on small screens */
+}
+
+.cookie-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cookie-btn.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.cookie-btn.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.cookie-btn.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+}
+
+.cookie-btn.btn-secondary:hover {
+    background-color: var(--border-color);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
